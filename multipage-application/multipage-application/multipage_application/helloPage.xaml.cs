@@ -21,6 +21,13 @@ namespace multipage_application
         {
             var name = NameEntry.Text;
             await DisplayAlert("Greeting", $"Hello {name}!!","G'day");
+            App.History.Add(name);
+            HelloHistoryButton.IsEnabled = true;
+        }
+
+        async void HelloHistoryButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HelloHistory());
         }
     }
 }

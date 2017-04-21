@@ -9,10 +9,12 @@ namespace multipage_application
 {
     public partial class App : Application
     {
+        public static IList<string> History { get; set; }
+
         public App()
         {
             InitializeComponent();
-
+            History = new List<string>();
             MainPage = new helloPage();
         }
 
